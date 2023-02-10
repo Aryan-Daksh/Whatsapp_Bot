@@ -19,8 +19,10 @@ class WhatsApp:
     def nav_green_dot(self):
             try:
                 position=pt.locateOnScreen('greendot.png',confidence=.76)
+                #Here You can update greendot.png for better reference for screenchecker 
                 pt.moveTo(position[0:2], duration=self.speed)
                 pt.moveRel(-100, 0, duration=self.speed)
+                #You can readjust the values for cursor to be perfectly working for ur screensize
                 pt.doubleClick(interval=self.click_speed)
             except Exception as e:
                 global greendot
@@ -32,6 +34,7 @@ class WhatsApp:
             position = pt.locateOnScreen('paperclip.png', confidence=.76)
             pt.moveTo(position[0:2], duration=self.speed)
             pt.moveRel(100, 12, duration=self.speed)
+            #You can readjust the values for cursor to be perfectly working for ur screensize
             pt.doubleClick(interval=self.click_speed)
         except Exception as e:
             print('Exception (nav_input_box): ', e)
@@ -39,6 +42,7 @@ class WhatsApp:
     def nav_message(self):
         try:
             position = pt.locateOnScreen('paperclip.png', confidence=.76)
+            #Here You can update paperclip.png for better reference for screencheccker 
             pt.moveTo(position[0:2], duration=self.speed)
 
         except Exception as e:
@@ -48,11 +52,13 @@ class WhatsApp:
 
     def get_message(self):
             pt.moveRel(10, -60, duration=self.speed)
+            #You can readjust the values for cursor to be perfectly working for ur screensize
             pt.tripleClick(interval=self.click_speed)
             sleep(self.speed)
             pt.rightClick(interval=self.click_speed)
             sleep(self.speed)
-            pt.moveRel(40,-280, duration=self.speed)
+            pt.moveRel(40,-260, duration=self.speed)
+            #You can readjust the values for cursor to be perfectly working for ur screensize
             pt.doubleClick(interval=self.click_speed)
             sleep(1)
 
